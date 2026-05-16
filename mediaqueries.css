@@ -1,103 +1,100 @@
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
+/* ── TABLET ── */
+@media screen and (max-width: 1100px) {
+  .skills-grid      { grid-template-columns: 1fr; }
+  .projects-grid    { grid-template-columns: 1fr; }
 
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
-  section,
-  .section-container {
-    height: fit-content;
-  }
-  section {
-    margin: 0 5%;
-  }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
-  .about-containers {
-    margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
-  }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
-  }
-  article {
-    font-size: 1rem;
-  }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
-    flex-direction: column;
+  .timeline-item {
+    grid-template-columns: 1fr;
     gap: 0.5rem;
-    text-align: center;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
+  .timeline-meta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding-top: 0;
+    gap: 12px;
+  }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .about-img-wrap { max-width: 260px; margin: 0 auto 1rem; }
+}
+
+/* ── MOBILE NAV BREAKPOINT ── */
+@media screen and (max-width: 900px) {
+  #desktop-nav  { display: none; }
+  #hamburger-nav { display: flex; }
+
+  .hero-visual { display: none; }
+
+  #profile {
+    min-height: auto;
+    padding-top: 90px;
+    padding-bottom: 60px;
     justify-content: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
+  .hero-content { max-width: 100%; text-align: center; }
+  .hero-sub     { margin: 0 auto 1.5rem; }
+  .hero-tags,
+  .btn-container,
+  .socials-row  { justify-content: center; }
+}
+
+/* ── MOBILE ── */
+@media screen and (max-width: 600px) {
+  section {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
-  .title {
-    font-size: 2rem;
+
+  .hero-name  { font-size: 2.1rem; }
+  .hero-role  { font-size: 0.9rem; }
+  .hero-sub   { font-size: 0.88rem; }
+
+  .btn-container { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 230px; justify-content: center; }
+
+  .about-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-num    { font-size: 1.6rem; }
+
+  .skills-grid  { gap: 1rem; }
+  .skill-group  { padding: 18px; }
+
+  .tl-header { flex-direction: column; gap: 8px; }
+  .tl-logo-wrap { display: none; }
+  .timeline-card { padding: 20px; }
+  .tl-bullets li { font-size: 0.82rem; }
+
+  .projects-grid { gap: 1rem; }
+  .project-body  { padding: 18px; }
+  .project-name  { font-size: 1rem; }
+
+  .contact-links-row  { flex-direction: column; align-items: center; }
+  .contact-pill { width: 100%; max-width: 290px; justify-content: center; }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
-  .text-container {
-    text-align: justify;
+  .footer-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
+  .float-card  { display: none; }
+  .menu-links a { padding: 14px 20px; }
+
+  .section-title { font-size: 1.7rem; }
+}
+
+/* ── VERY SMALL ── */
+@media screen and (max-width: 380px) {
+  .about-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hero-name   { font-size: 1.85rem; }
+  .section-title { font-size: 1.55rem; }
+  .hero-tags   { justify-content: center; }
 }

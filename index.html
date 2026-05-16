@@ -1,409 +1,527 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-    type="text/javascript"
-    src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.development.js"
-></script>
-    <meta name="description" content="I am Rajnikant, a final-year B.Tech student at NIT Rourkela. My passion for coding and web development has led me to master a multitude of programming languages, including C/C++, HTML, and JavaScript"/>
-    <title>Rajnikant's Portfolio | Developer | NIT Rourkela</title>
+    <meta name="description" content="Rajnikant — Associate Software Engineer at Incture Technologies. NIT Rourkela graduate specialising in React, Redux Toolkit, config-driven UI, and full-stack development." />
+    <title>Rajnikant | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="./assets/_69750212-89f1-4087-9006-eb855460a4dd.jpeg" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="icon" type="image/x-icon" href="/assets/_69750212-89f1-4087-9006-eb855460a4dd.jpeg">
   </head>
   <body>
+
+    <!-- ═══════════════════════════════════
+         DESKTOP NAV
+    ═══════════════════════════════════ -->
     <nav id="desktop-nav">
-      <div class="logo">Rajnikant</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <div class="logo">RK<span class="logo-dot">.</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle-desk" aria-label="Toggle theme">
+        <!-- sun icon (shown in dark mode) -->
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <!-- moon icon (shown in light mode) -->
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
     </nav>
+
+    <!-- ═══════════════════════════════════
+         MOBILE NAV
+    ═══════════════════════════════════ -->
     <nav id="hamburger-nav">
-      <div class="logo">Rajnikant</div>
+      <div class="logo">RK<span class="logo-dot">.</span></div>
       <div class="hamburger-menu">
+        <button class="theme-toggle" id="theme-toggle-mob" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
         <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#about"      onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#work"       onclick="toggleMenu()">Work</a></li>
+          <li><a href="#projects"   onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact"    onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
-  
+
+    <!-- ═══════════════════════════════════
+         HERO
+    ═══════════════════════════════════ -->
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/main.jpeg" alt="Rajnikant animated profile picture" style="border-radius: 50%;"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Rajnikant</h1>
-        <p class="section__text__p2">Full Stack developer</p>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-name">
+          Hi, I'm <span class="gradient-text">Rajnikant</span>
+        </h1>
+        <p class="hero-role">
+          Associate Software Engineer <span class="at-sign">@</span> Incture Technologies
+        </p>
+        <p class="hero-sub">
+          Building enterprise-scale React applications — config-driven UIs, real-time systems,
+          and performance-optimised frontend architectures.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">React</span>
+          <span class="tag">Redux Toolkit</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">SAP UI5</span>
+        </div>
         <div class="btn-container">
-          <button
-            class="x btn btn-color-2"
-            onclick="window.open('./assets/Rajnikant_CV (14).pdf')"
-          >
+          <a class="btn btn-primary" href="./Rajnikant_Updated_Cv.pdf" download="Rajnikant_CV.pdf">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download CV
-          </button>
-          <button class="x btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+          </a>
+          <a class="btn btn-outline" href="#contact">Let's Talk</a>
         </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/rajnikant-%E2%80%8E-ba3422221/'"
-          />
-          <img
-          src="./assets/github.png"
-          alt="My Github profile"
-          class="icon"
-          onclick="location.href='https://github.com/RAJNIKANT1021'"
-        />
-          <img
-          style="border-radius: 50%;"
-            src="./assets/gfg.png"
-            alt="My GFG profile"
-            class="icon"
-            onclick="location.href='https://auth.geeksforgeeks.org/user/0311_its_me'"
-          />
-         
-        <img
-        style="border-radius: 50%;"
-          src="./assets/hrank.png"
-          alt="My HACKERANK profile"
-          class="icon"
-          onclick="location.href='https://www.hackerrank.com/profile/RAJNIKANT1021'"
-        />
+        <div class="socials-row">
+          <a href="https://www.linkedin.com/in/rajnikant-%E2%80%8E-ba3422221/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/RAJNIKANT1021" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://auth.geeksforgeeks.org/user/0311_its_me" target="_blank" rel="noopener" class="social-link" aria-label="GeeksForGeeks">
+            <img src="./assets/gfg.png" alt="GFG" style="width:17px;height:17px;border-radius:50%;opacity:.75;" />
+          </a>
+          <a href="https://www.hackerrank.com/profile/RAJNIKANT1021" target="_blank" rel="noopener" class="social-link" aria-label="HackerRank">
+            <img src="./assets/hrank.png" alt="HackerRank" style="width:17px;height:17px;border-radius:50%;opacity:.75;" />
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="./assets/main.jpeg" alt="Rajnikant" class="hero-img" />
+          <div class="hero-img-ring"></div>
+        </div>
+        <div class="float-card card-top">
+          <span class="fc-label">Current Role</span>
+          <span class="fc-value">Assoc. SWE · Incture</span>
+        </div>
+        <div class="float-card card-bottom">
+          <span class="fc-label">Location</span>
+          <span class="fc-value">Bhubaneswar, India</span>
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════ -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/prof.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
+      <p class="section-label">Get To Know Me</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img src="./assets/prof.jpeg" alt="Rajnikant" class="about-img" />
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>3+ months <br />Frontend Development(Internship)</p>
+        <div class="about-right">
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.tech. Bachelors Degree<br />NIT ROURKELA</p>
+            <div class="stat-card reveal">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Field Types Built</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-num">85%</span>
+              <span class="stat-label">Jest Coverage</span>
+            </div>
+            <div class="stat-card reveal">
+              <span class="stat-num">80%</span>
+              <span class="stat-label">API Calls Reduced</span>
             </div>
           </div>
-          <div class="text-container">
-            <p>
-              I am Rajnikant, a final-year B.Tech student at NIT Rourkela. My passion for coding and web development has led me to master a multitude of programming languages, including C/C++, HTML, and JavaScript. I'm proficient in popular frameworks such as React JS, Tailwind CSS, Bootstrap, and Material UI. My expertise extends to databases like Firebase and MongoDB, providing a robust foundation for my projects. Beyond academics, I love to innovate and have participated in hackathons, crafting creative solutions and honing my problem-solving skills. I invite you to explore my portfolio and connect with me to collaborate on exciting tech ventures.
-            </p>
+          <p class="about-bio reveal">
+            I'm a software engineer currently working at <strong>Incture Technologies</strong> in Bhubaneswar,
+            building enterprise SAP MDG and S/4HANA onboarding platforms. I specialise in config-driven UI
+            architecture, runtime form-rendering engines, and real-time WebSocket systems.
+          </p>
+          <p class="about-bio reveal">
+            I graduated from <strong>NIT Rourkela</strong> (B.Tech, 2024) and have won hackathons, made the Dean's
+            List, and shipped multiple production-deployed open-source projects. I love turning complex
+            business requirements into elegant, performant frontends.
+          </p>
+          <div class="about-chips reveal">
+            <span class="chip">🏆 Hackathon Winner · TechFest NIT</span>
+            <span class="chip">🎓 Dean's List 2022–23</span>
+            <span class="chip">📜 SAP UI5 Certified · OpenSAP</span>
+            <span class="chip">🛠 Open Source Contributor</span>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
+
+    <!-- ═══════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════ -->
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React JS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>GSAP</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+      <div class="skills-inner">
+        <p class="section-label">What I Work With</p>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <div class="skill-group-header">
+              <span class="skill-group-icon">⚡</span>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill expert">React.js</span>
+              <span class="skill-pill expert">Redux Toolkit</span>
+              <span class="skill-pill expert">TypeScript</span>
+              <span class="skill-pill expert">JavaScript ES6+</span>
+              <span class="skill-pill mid">HTML5 / CSS3</span>
+              <span class="skill-pill mid">Tailwind CSS</span>
+              <span class="skill-pill mid">Material-UI</span>
+              <span class="skill-pill mid">SAP UI5</span>
+              <span class="skill-pill mid">Formik / Yup</span>
+              <span class="skill-pill mid">GSAP</span>
             </div>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MongoDB</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+          <div class="skill-group reveal">
+            <div class="skill-group-header">
+              <span class="skill-group-icon">🛠</span>
+              <h3>Backend &amp; Cloud</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill mid">Node.js</span>
+              <span class="skill-pill mid">Express.js</span>
+              <span class="skill-pill mid">MongoDB</span>
+              <span class="skill-pill mid">Firebase</span>
+              <span class="skill-pill mid">MySQL</span>
+              <span class="skill-pill mid">Docker</span>
+              <span class="skill-pill mid">Vercel / Render</span>
+              <span class="skill-pill mid">Git</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <div class="skill-group-header">
+              <span class="skill-group-icon">🧠</span>
+              <h3>System Design</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill expert">Config-Driven UI</span>
+              <span class="skill-pill expert">In-Memory Caching (LRU)</span>
+              <span class="skill-pill mid">WebSocket</span>
+              <span class="skill-pill mid">AES-GCM Encryption</span>
+              <span class="skill-pill mid">REST APIs</span>
+              <span class="skill-pill mid">Code Splitting</span>
+            </div>
+          </div>
+          <div class="skill-group reveal">
+            <div class="skill-group-header">
+              <span class="skill-group-icon">✅</span>
+              <h3>Testing &amp; Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill mid">Jest</span>
+              <span class="skill-pill mid">React Testing Library</span>
+              <span class="skill-pill mid">Agile / Scrum</span>
+              <span class="skill-pill mid">C / C++</span>
+              <span class="skill-pill mid">SQL</span>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
+
+    <!-- ═══════════════════════════════════
+         WORK EXPERIENCE
+    ═══════════════════════════════════ -->
+    <section id="work">
+      <p class="section-label">Where I've Worked</p>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="tl-period">Sept 2023 – Present</span>
+            <span class="tl-badge current">Current</span>
+          </div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-company">Incture Technologies</h3>
+                <p class="tl-role">Associate Software Engineer · Bhubaneswar, India (Onsite)</p>
+              </div>
+              <div class="tl-logo-wrap"><span class="tl-logo-text">INC</span></div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Designed a <strong>config-driven UI architecture</strong> for enterprise SAP MDG and S/4HANA Business Partner onboarding, enabling business teams to update field rules with <em>zero frontend deployments</em></li>
+              <li>Built a <strong>runtime form-rendering engine</strong> that constructs validation and initial state from API-driven configuration — supports nested sections, dynamic tables, and role-based conditional rules</li>
+              <li>Implemented SAP-standard field validation across <strong>50+ field types</strong> covering digit, alphanumeric, and country-specific formatting with multi-step conditional logic</li>
+              <li>Engineered a <strong>dependent field engine</strong> for show/hide, enable/disable, and required-state behaviour driven by server-side AND/OR logic</li>
+              <li>Built a <strong>client-side caching layer</strong> with TTL expiry, LRU eviction, and request deduplication — reducing redundant API calls by <strong>~80%</strong></li>
+              <li>Developed <strong>45+ Redux Toolkit slices</strong> with a shared API thunk factory, selective persistence, and opt-in per-request caching</li>
+              <li>Built a <strong>real-time WebSocket notification and chat system</strong> with Redux-connected dispatch and debounced typing indicators, replacing polling entirely</li>
+              <li>Implemented <strong>AES-GCM 256-bit encrypted browser storage</strong> for i18n caching with background sync and RTL/LTR support</li>
+              <li>Improved performance via route-based code splitting (30+ lazy pages), virtualised lists, and memoisation; achieved <strong>85% Jest test coverage</strong></li>
+            </ul>
+            <div class="tl-tech">
+              <span>React</span><span>Redux Toolkit</span><span>TypeScript</span><span>SAP UI5</span><span>WebSocket</span><span>Jest</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="tl-period">Jan 2023 – Jul 2023</span>
+          </div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-company">Dotevolve</h3>
+                <p class="tl-role">Frontend Developer Intern · Remote</p>
+              </div>
+              <div class="tl-logo-wrap"><span class="tl-logo-text">DOT</span></div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Overhauled e-commerce platform front-end, boosting user engagement by <strong>50%</strong> and automating 75% of manual workflows</li>
+              <li>Integrated <strong>Razorpay and Stripe</strong> payment gateways, improving checkout conversion by <strong>20%</strong>; delivered mobile-first responsive UI with cross-browser compatibility</li>
+            </ul>
+            <div class="tl-tech">
+              <span>React</span><span>Razorpay</span><span>Stripe</span><span>Responsive UI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         PROJECTS
+    ═══════════════════════════════════ -->
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/hub.jpeg"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">A2R-Hub</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/RAJNIKANT1021/AR-Hub','_blank')"              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://ar-hub-d45d1.web.app/','_blank')"
-              >
+      <p class="section-label">Things I've Built</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <!-- AI PPT Generation -->
+        <div class="project-card featured reveal">
+          <div class="project-thumb">
+            <img src="./assets/ChatGPT Image May 17, 2026, 02_02_59 AM.png" alt="AI PPT Generation" />
+            <div class="project-thumb-overlay">
+              <a href="https://github.com/RAJNIKANT1021" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="#" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 Live Demo
-              </button>
+              </a>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/inote.jpeg"
-                alt="Project 2"
-                class="project-img"
-              />
+          <div class="project-body">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">🤖</div>
+              <div class="project-links">
+                <a href="https://github.com/RAJNIKANT1021" target="_blank" rel="noopener" class="proj-link" aria-label="GitHub">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="proj-link" aria-label="Live Demo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
             </div>
-            <h2 class="experience-sub-title project-title">iNotebook</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/RAJNIKANT1021/iNotebook-taskschedulingapp','_blank')"              
-           
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                target="_blank"
-                onclick="window.open('https://inotebook-ur-cloud-notes.vercel.app/','_blank')"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/soudko.jpeg"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Sudoku Solver</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/RAJNIKANT1021/onlinesuduko','_blank')"              
-
-               
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://onlinesudukosolver.web.app/','_blank')"
-
-      
-              >
-                Live Demo
-              </button>
+            <h3 class="project-name">AI PPT Generation</h3>
+            <p class="project-desc">
+              Full-stack monorepo where a user prompt drives a <strong>Hugging Face LLM</strong> to generate a structured slide deck.
+              Unsplash enriches visuals and Express exports editable <code>.pptx</code> via PptxGenJS.
+              Strict schema separation keeps preview and export in sync. Deployed on Render.
+            </p>
+            <div class="project-stack">
+              <span>React</span><span>Tailwind CSS</span><span>Express.js</span><span>Hugging Face</span><span>PptxGenJS</span><span>Unsplash API</span>
             </div>
           </div>
         </div>
+
+        <!-- Online Sudoku Solver -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="./assets/ChatGPT Image May 17, 2026, 01_58_24 AM.png" alt="Online Sudoku Solver" />
+            <div class="project-thumb-overlay">
+              <a href="https://github.com/RAJNIKANT1021/onlinesuduko" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="https://onlinesudukosolver.web.app/" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">🧩</div>
+              <div class="project-links">
+                <a href="https://github.com/RAJNIKANT1021/onlinesuduko" target="_blank" rel="noopener" class="proj-link" aria-label="GitHub">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="https://onlinesudukosolver.web.app/" target="_blank" rel="noopener" class="proj-link" aria-label="Live Demo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-name">Online Sudoku Solver</h3>
+            <p class="project-desc">
+              Visualises <strong>asynchronous backtracking (DFS)</strong> in real time with adjustable speed control
+              and randomised puzzle generation across difficulty levels. Dark glassmorphism UI with neon accents
+              and an integrated tutorial panel explaining backtracking logic.
+            </p>
+            <div class="project-stack">
+              <span>React.js</span><span>Vanilla CSS</span><span>Async DFS</span><span>Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- iNotebook -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="./assets/ChatGPT Image May 17, 2026, 02_10_59 AM.png" alt="iNotebook" />
+            <div class="project-thumb-overlay">
+              <a href="https://github.com/RAJNIKANT1021/iNotebook-taskschedulingapp" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="https://inotebook-ur-cloud-notes.vercel.app/" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">📒</div>
+              <div class="project-links">
+                <a href="https://github.com/RAJNIKANT1021/iNotebook-taskschedulingapp" target="_blank" rel="noopener" class="proj-link" aria-label="GitHub">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="https://inotebook-ur-cloud-notes.vercel.app/" target="_blank" rel="noopener" class="proj-link" aria-label="Live Demo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-name">iNotebook</h3>
+            <p class="project-desc">
+              Cloud-based note-taking and task-scheduling app with secure user authentication, full CRUD
+              operations, and a clean responsive UI. Full MERN stack with Firebase integration.
+            </p>
+            <div class="project-stack">
+              <span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span><span>Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- A2R Hub -->
+        <div class="project-card reveal">
+          <div class="project-thumb">
+            <img src="./assets/ChatGPT Image May 17, 2026, 02_14_28 AM.png" alt="A2R Hub" />
+            <div class="project-thumb-overlay">
+              <a href="https://github.com/RAJNIKANT1021/AR-Hub" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="https://ar-hub-d45d1.web.app/" target="_blank" rel="noopener" class="overlay-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-card-top">
+              <div class="project-icon-wrap">🚀</div>
+              <div class="project-links">
+                <a href="https://github.com/RAJNIKANT1021/AR-Hub" target="_blank" rel="noopener" class="proj-link" aria-label="GitHub">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="https://ar-hub-d45d1.web.app/" target="_blank" rel="noopener" class="proj-link" aria-label="Live Demo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-name">A2R Hub</h3>
+            <p class="project-desc">
+              Community platform connecting students and alumni with real-time feeds, resource sharing,
+              and collaboration tools. Built with React and Firebase for a seamless, responsive experience.
+            </p>
+            <div class="project-stack">
+              <span>React</span><span>Firebase</span><span>Material-UI</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
+
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:Rajnikant1021@gmail.com">Rajnikant1021@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/rajnikant-%E2%80%8E-ba3422221/">LinkedIn</a></p>
+      <p class="section-label">What's Next?</p>
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-wrapper reveal">
+        <p class="contact-blurb">
+          I'm currently open to new opportunities. Whether you have a question, a project idea,
+          or just want to say hi — my inbox is always open.
+        </p>
+        <a href="mailto:Rajnikant1021@gmail.com" class="contact-cta">
+          Say Hello
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="contact-links-row">
+          <a href="mailto:Rajnikant1021@gmail.com" class="contact-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Rajnikant1021@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/rajnikant-%E2%80%8E-ba3422221/" target="_blank" rel="noopener" class="contact-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/RAJNIKANT1021" target="_blank" rel="noopener" class="contact-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════ -->
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 Rajnikant. All Rights Reserved.</p>
+      <div class="footer-inner">
+        <span class="footer-logo">RK<span class="logo-dot">.</span></span>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#experience">Skills</a>
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="footer-copy">Designed &amp; Built by Rajnikant &copy; 2024</p>
+      </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
     <script src="script.js"></script>
-    
   </body>
 </html>

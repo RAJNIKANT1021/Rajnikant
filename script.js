@@ -1,96 +1,39 @@
+/* ── THEME TOGGLE ── */
+const root = document.documentElement;
+const toggleBtns = [
+  document.getElementById("theme-toggle-desk"),
+  document.getElementById("theme-toggle-mob"),
+];
 
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  toggleBtns.forEach((btn) => {
+    if (!btn) return;
+    const sun  = btn.querySelector(".icon-sun");
+    const moon = btn.querySelector(".icon-moon");
+    if (theme === "dark") {
+      sun.style.display  = "";
+      moon.style.display = "none";
+    } else {
+      sun.style.display  = "none";
+      moon.style.display = "";
+    }
+  });
+}
 
+// Restore saved preference (default: dark)
+applyTheme(localStorage.getItem("theme") || "dark");
 
+toggleBtns.forEach((btn) => {
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+  });
+});
 
-var tl=gsap.timeline();
-
-tl.from(".logo,.nav-links li",{
-  opacity:0,
-  y:-50,
-  duration:.4,
-   stagger:0.1,
-
-})
-
-tl.from("#profile .section__text p,#profile .section__text h1,#profile .section__pic-container img,#profile .section__text .btn-container,#profile .section__text #socials-container img",{
-  opacity:0,
-  scale:0.4,
-  duration:.5,
-  
-   stagger:0.2,
-
-})
-
-tl.from("#about .section-container .section__pic-container,#about .section-container .about-details-container .details-container,#about .section-container .about-details-container .text-container",{
-  opacity:0,
-  scale:0.25,
-  duration:.3,
-  
-   stagger:0.2,
-   scrollTrigger:{
-             //element we r triggering
-trigger:"#about .section-container",
-scroller:"body",
-//         /markers are helping hand
-//  markers:true,
- end:"top 40%",
-//         //scroll key sath animate kro
-       scrub:2,
-
-
-
-   }
-
-})
-tl.from("#experience .experience-details-container .details-container, #experience .experience-details-container .details-container article",{
-  opacity:0,
-  scale:0.25,
-  duration:1,
-  
-   stagger:0.4,
-   scrollTrigger:{
-             //element we r triggering
-trigger:"#experience",
-scroller:"body",
-// start:"top 40%",
-//         /markers are helping hand
-//  markers:true,
-   end:"top -5%",
-//         //scroll key sath animate kro
-       scrub:2,
-
-
-
-   }
-
-})
-
-tl.from("#projects .experience-details-container .about-containers .color-container,#projects .experience-details-container .about-containers .color-container .article-container img",{
-  opacity:0,
-  scale:0.25,
-  duration:1,
-  
-   stagger:0.4,
-   scrollTrigger:{
-             //element we r triggering
-trigger:"#experience",
-scroller:"body",
-// start:"top 40%",
-//         /markers are helping hand
-//  markers:true,
-  //  end:"top -5%",
-//         //scroll key sath animate kro
-       scrub:2,
-
-
-
-   }
-
-})
-
-
-
-
+/* ── HAMBURGER MENU ── */
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -98,9 +41,68 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
-gsap.to(".arrow",{
-y:10,
-yoyo:true,
-repeat:-1,
-duration:0.4,
-})
+document.addEventListener("click", (e) => {
+  const nav = document.getElementById("hamburger-nav");
+  if (nav && !nav.contains(e.target)) {
+    document.querySelector(".menu-links")?.classList.remove("open");
+    document.querySelector(".hamburger-icon")?.classList.remove("open");
+  }
+});
+
+/* ── ACTIVE NAV HIGHLIGHT ON SCROLL ── */
+const sections = document.querySelectorAll("section[id]");
+const navAnchors = document.querySelectorAll(
+  "#desktop-nav .nav-links a, .footer-nav a"
+);
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach((a) => {
+          const isActive = a.getAttribute("href") === "#" + entry.target.id;
+          a.style.color = isActive ? "var(--accent)" : "";
+        });
+      }
+    });
+  },
+  { rootMargin: "-40% 0px -55% 0px" }
+);
+
+sections.forEach((s) => sectionObserver.observe(s));
+
+/* ── SCROLL-REVEAL ── */
+const revealEls = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // stagger siblings inside the same parent
+        const siblings = Array.from(
+          entry.target.parentElement.querySelectorAll(".reveal:not(.visible)")
+        );
+        const delay = siblings.indexOf(entry.target) * 80;
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, delay);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+revealEls.forEach((el) => revealObserver.observe(el));
+
+/* ── SMOOTH NAV SCROLL with offset for fixed header ── */
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (e) => {
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (!target) return;
+    e.preventDefault();
+    const offset = 72;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});
