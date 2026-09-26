@@ -249,6 +249,7 @@ section {
    HERO
    ============================ */
 #profile {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -262,7 +263,22 @@ section {
   padding-right: 6%;
 }
 
-.hero-content { flex: 1; max-width: 580px; }
+/* Three.js animated 3D background layer */
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+
+.hero-content { position: relative; z-index: 1; flex: 1; max-width: 580px; }
 
 /* Animated entrance */
 .hero-badge,
@@ -437,12 +453,20 @@ section {
 .hero-visual {
   flex-shrink: 0;
   position: relative;
+  z-index: 1;
   width: 330px;
   height: 370px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
   animation: heroFadeUp 0.8s 0.25s cubic-bezier(.4,0,.2,1) both;
 }
 
-.hero-img-wrap { position: relative; width: 100%; height: 100%; }
+.hero-img-wrap {
+  position: relative;
+  width: 100%; height: 100%;
+  transform: translateZ(15px);
+  transform-style: preserve-3d;
+}
 
 .hero-img {
   width: 100%; height: 100%;
@@ -461,7 +485,8 @@ section {
   animation: spinRing 8s linear infinite;
 }
 @keyframes spinRing {
-  to { transform: rotate(360deg); }
+  from { transform: translateZ(-45px) rotate(0deg); }
+  to   { transform: translateZ(-45px) rotate(360deg); }
 }
 
 .float-card {
@@ -481,8 +506,8 @@ section {
 .card-top    { top: 24px; left: -72px; animation-delay: 0s; }
 .card-bottom { bottom: 32px; right: -54px; animation-delay: 2s; }
 @keyframes float {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-7px); }
+  0%,100% { transform: translateZ(65px) translateY(0); }
+  50%      { transform: translateZ(65px) translateY(-7px); }
 }
 
 .fc-label { font-size: 0.65rem; color: var(--text-faint); font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; }
@@ -945,3 +970,29 @@ footer {
   transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================
+   3D TILT / GLARE (JS-driven)
+   ============================ */
+.tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-glare::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255,255,255,0.16),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.tilt-glare:hover::after { opacity: 1; }
