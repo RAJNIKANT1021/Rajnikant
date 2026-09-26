@@ -106,3 +106,37 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     window.scrollTo({ top, behavior: "smooth" });
   });
 });
+
+/* ── 3D TILT / DEPTH-PARALLAX ON CARDS ── */
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (canHover && !reduceMotion) {
+  const MAX_TILT = 10; // degrees
+
+  document.querySelectorAll(".tilt").forEach((el) => {
+    let raf = null;
+
+    el.addEventListener("mousemove", (e) => {
+      const rect = el.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width;
+      const py = (e.clientY - rect.top) / rect.height;
+      const rx = (0.5 - py) * MAX_TILT * 2;
+      const ry = (px - 0.5) * MAX_TILT * 2;
+
+      el.style.transition = "none";
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+        el.style.setProperty("--glare-x", `${px * 100}%`);
+        el.style.setProperty("--glare-y", `${py * 100}%`);
+      });
+    });
+
+    el.addEventListener("mouseleave", () => {
+      if (raf) cancelAnimationFrame(raf);
+      el.style.transition = "transform 0.5s cubic-bezier(.4,0,.2,1)";
+      el.style.transform = "";
+    });
+  });
+}

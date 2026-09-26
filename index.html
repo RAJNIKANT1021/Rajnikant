@@ -62,6 +62,7 @@
          HERO
     ═══════════════════════════════════ -->
     <section id="profile">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-dot"></span>
@@ -107,7 +108,7 @@
         </div>
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual tilt">
         <div class="hero-img-wrap">
           <img src="./assets/main.jpeg" alt="Rajnikant" class="hero-img" />
           <div class="hero-img-ring"></div>
@@ -130,24 +131,24 @@
       <p class="section-label">Get To Know Me</p>
       <h2 class="section-title">About Me</h2>
       <div class="about-grid">
-        <div class="about-img-wrap reveal">
+        <div class="about-img-wrap reveal tilt">
           <img src="./assets/prof.jpeg" alt="Rajnikant" class="about-img" />
         </div>
         <div class="about-right">
           <div class="about-stats">
-            <div class="stat-card reveal">
+            <div class="stat-card reveal tilt tilt-glare">
               <span class="stat-num">2+</span>
               <span class="stat-label">Years Experience</span>
             </div>
-            <div class="stat-card reveal">
+            <div class="stat-card reveal tilt tilt-glare">
               <span class="stat-num">50+</span>
               <span class="stat-label">Field Types Built</span>
             </div>
-            <div class="stat-card reveal">
+            <div class="stat-card reveal tilt tilt-glare">
               <span class="stat-num">85%</span>
               <span class="stat-label">Jest Coverage</span>
             </div>
-            <div class="stat-card reveal">
+            <div class="stat-card reveal tilt tilt-glare">
               <span class="stat-num">80%</span>
               <span class="stat-label">API Calls Reduced</span>
             </div>
@@ -180,7 +181,7 @@
         <p class="section-label">What I Work With</p>
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
-          <div class="skill-group reveal">
+          <div class="skill-group reveal tilt tilt-glare">
             <div class="skill-group-header">
               <span class="skill-group-icon">⚡</span>
               <h3>Frontend</h3>
@@ -198,7 +199,7 @@
               <span class="skill-pill mid">GSAP</span>
             </div>
           </div>
-          <div class="skill-group reveal">
+          <div class="skill-group reveal tilt tilt-glare">
             <div class="skill-group-header">
               <span class="skill-group-icon">🛠</span>
               <h3>Backend &amp; Cloud</h3>
@@ -214,7 +215,7 @@
               <span class="skill-pill mid">Git</span>
             </div>
           </div>
-          <div class="skill-group reveal">
+          <div class="skill-group reveal tilt tilt-glare">
             <div class="skill-group-header">
               <span class="skill-group-icon">🧠</span>
               <h3>System Design</h3>
@@ -228,7 +229,7 @@
               <span class="skill-pill mid">Code Splitting</span>
             </div>
           </div>
-          <div class="skill-group reveal">
+          <div class="skill-group reveal tilt tilt-glare">
             <div class="skill-group-header">
               <span class="skill-group-icon">✅</span>
               <h3>Testing &amp; Tools</h3>
@@ -258,7 +259,7 @@
             <span class="tl-period">Sept 2023 – Present</span>
             <span class="tl-badge current">Current</span>
           </div>
-          <div class="timeline-card">
+          <div class="timeline-card tilt tilt-glare">
             <div class="tl-header">
               <div>
                 <h3 class="tl-company">Incture Technologies</h3>
@@ -287,7 +288,7 @@
           <div class="timeline-meta">
             <span class="tl-period">Jan 2023 – Jul 2023</span>
           </div>
-          <div class="timeline-card">
+          <div class="timeline-card tilt tilt-glare">
             <div class="tl-header">
               <div>
                 <h3 class="tl-company">Dotevolve</h3>
@@ -317,7 +318,7 @@
       <div class="projects-grid">
 
         <!-- AI PPT Generation -->
-        <div class="project-card featured reveal">
+        <div class="project-card featured reveal tilt tilt-glare">
           <div class="project-thumb">
             <img src="./assets/ChatGPT Image May 17, 2026, 02_02_59 AM.png" alt="AI PPT Generation" />
             <div class="project-thumb-overlay">
@@ -356,7 +357,7 @@
         </div>
 
         <!-- Online Sudoku Solver -->
-        <div class="project-card reveal">
+        <div class="project-card reveal tilt tilt-glare">
           <div class="project-thumb">
             <img src="./assets/ChatGPT Image May 17, 2026, 01_58_24 AM.png" alt="Online Sudoku Solver" />
             <div class="project-thumb-overlay">
@@ -395,7 +396,7 @@
         </div>
 
         <!-- iNotebook -->
-        <div class="project-card reveal">
+        <div class="project-card reveal tilt tilt-glare">
           <div class="project-thumb">
             <img src="./assets/ChatGPT Image May 17, 2026, 02_10_59 AM.png" alt="iNotebook" />
             <div class="project-thumb-overlay">
@@ -433,7 +434,7 @@
         </div>
 
         <!-- A2R Hub -->
-        <div class="project-card reveal">
+        <div class="project-card reveal tilt tilt-glare">
           <div class="project-thumb">
             <img src="./assets/ChatGPT Image May 17, 2026, 02_14_28 AM.png" alt="A2R Hub" />
             <div class="project-thumb-overlay">
@@ -522,6 +523,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="three-scene.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
